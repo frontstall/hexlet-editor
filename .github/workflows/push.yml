@@ -1,0 +1,17 @@
+name: On Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build:
+    if: github.repository == 'hexlet/hexlet-editor'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run web tests
+        run: |
+          make test
