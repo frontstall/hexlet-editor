@@ -1,0 +1,15 @@
+module.exports = {
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  extends: 'airbnb',
+  root: true,
+  env: {
+    browser: true,
+    jest: true,
+  },
+};
