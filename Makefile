@@ -1,9 +1,9 @@
 install:
-	cd server && npm install
+	npm install
 	cd client && npm install
 
 build:
-	cd server && npm run build
+	npm run build
 	cd client && npm run build
 
 test:
