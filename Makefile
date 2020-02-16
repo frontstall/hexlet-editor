@@ -1,12 +1,12 @@
 install:
-	npm install
-	cd client && npm install
+	npm ci
+	cd client && npm ci
 
 build:
 	npm run build
 	cd client && npm run build
 
 test:
-	npm test
+	cd client && npm test
 
 .PHONY: test
