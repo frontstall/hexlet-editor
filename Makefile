@@ -9,4 +9,7 @@ build:
 test:
 	cd client && npm test
 
+test-ci:
+	cd client && CI=true npm test
+
 .PHONY: test
