@@ -13,7 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Run web tests
+      - name: Install deps
         run: |
           make install
-          make test
+      - name: Run web tests
+        run: |
+          make test-ci

@@ -17,4 +17,4 @@ jobs:
           make install
       - name: Run web tests
         run: |
-          make test
+          make test-ci
