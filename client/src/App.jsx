@@ -1,30 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MonacoEditor from 'react-monaco-editor';
 
-function App() {
+const App = () => {
+  const [code] = useState('// happy hacking!');
+
+  const onChange = (newValue, e) => {
+    console.log('onChange', newValue, e);
+  };
+
+  const editorDidMount = (editor) => {
+    editor.focus();
+  };
+
+  const options = {
+    selectOnLineNumbers: true,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MonacoEditor
+      width="800"
+      height="600"
+      language="javascript"
+      theme="vs-dark"
+      value={code}
+      options={options}
+      onChange={onChange}
+      editorDidMount={editorDidMount}
+    />
   );
-}
+};
 
 export default App;
